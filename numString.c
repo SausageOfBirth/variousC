@@ -11,6 +11,7 @@ char* concat(char* str1,char* str2){
   char* res = malloc((strnlen(str1,maxLen) * sizeof(char))+(strnlen(str2,maxLen) * sizeof(char)));
   memcpy(res,str1,strnlen(str1,maxLen));
   memcpy(res+strnlen(str1,maxLen),str2,strnlen(str2,maxLen));
+  res[(strnlen(str1,maxLen)+strnlen(str2,maxLen))] = 0;
 
   return res;
 }
