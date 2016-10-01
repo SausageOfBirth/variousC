@@ -45,7 +45,7 @@ void printInventory(Invent* inv){
 
   printf("%s\n", upperBorder);
   for(int n = 0; n < inv->itemNum; n++){
-  	int fillerSize = 100 - strnlen(inv->items[n]->item,maxLen);
+  	int fillerSize = 100 - lenstr(inv->items[n]->item,maxLen);
   	char *filler = malloc(fillerSize+1);
   	memset(filler, '.',fillerSize);
   	filler[fillerSize] = 0;

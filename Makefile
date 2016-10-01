@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-I.
+CFLAGS=-std=c99 -I.
 DOCS=main.c numString.c inventory.c
 
 all: main.c numString.c
