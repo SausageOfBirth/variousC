@@ -1,5 +1,4 @@
 #include "inventory.h"
-#include "numString.h"
 
 void removeItem(Invent** inv, int index, int amount){
   if((*inv)->itemNum == 0){
