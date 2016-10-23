@@ -14,5 +14,5 @@ int lenstr(char* str, int max);
 int in_str(char* n, char* target);
 int equals(char* a, char* b);
 char* concat(char* str1,char* str2);
-int is_vowel(char n);
+int is_vowel(char* n);
 int lenstr(char* str, int max);

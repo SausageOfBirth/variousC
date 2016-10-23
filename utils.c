@@ -56,24 +56,24 @@ int in_str(char* n, char* target){
     buf[target_len] = 0;
     if(equals(buf, target)){
       free(buf);
-      return 0;
+      return 1;
     }
     free(buf);
   }
-  return 1;
+  return 0;
 }
 
 int equals(char* a, char* b){
   int a_len = lenstr(a, maxLen);
   if(a_len != lenstr(b, maxLen)){
-    return 1;
+    return 0;
   }
   for(int n = 0; n < a_len; n++){
     if(a[n] != b[n]){
-      return 1;
+      return 0;
     }
   }
-  return 0;
+  return 1;
 }
 
 char* concat(char* str1,char* str2){
@@ -96,11 +96,18 @@ int lenstr(char* str, int max){
   return count;
 }
 
-int is_vowel(char n){
-  for(int i = 0; i < lenstr(vowels, maxLen); i++){
-    if(n == vowels[i]){
-      return 0;
+int is_vowel(char* n){
+  if(lenstr(n, maxLen) > 2){
+    if(n[0] == 'h' || n[0] == 'H'){
+      if(n[1] == 'o' && n[2] == 'u'){
+        return 1;
+      }
     }
   }
-  return 1;
+  for(int i = 0; i < lenstr(vowels, maxLen); i++){
+    if(n[0] == vowels[i]){
+      return 1;
+    }
+  }
+  return 0;
 }

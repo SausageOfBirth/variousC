@@ -22,10 +22,11 @@ typedef struct{
 } Door;
 
 typedef struct{
+  char* name;
   Door** exits;
   RoomInven* stuff;
 } Room;
 
 void removeRoomItem(RoomInven** inv, int index, int amount);
 void addRoomItem(RoomInven** inv, RoomObj* object);
-void printRoomInvenory(RoomInven* inv);
+void printRoomInventory(RoomInven* inv);

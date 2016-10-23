@@ -31,7 +31,7 @@ void addRoomItem(RoomInven** inv, RoomObj* object){
 
 void printObj(RoomObj* object){
   if(object->num == 1){
-    if(is_vowel(object->item[0])){
+    if(is_vowel(object->item)){
       printf("an %s", object->item);
     }else{
       printf("a %s", object->item);
@@ -41,19 +41,22 @@ void printObj(RoomObj* object){
   }
 }
 
-void printRoomInvenory(RoomInven* inv){
+void printRoomInventory(RoomInven* inv){
   if(inv->itemNum == 0){
   	printf("Dude! This room is like, totally empty!\n");
   	return;
   }
-  printf("In this room you see ");
+  printf("In this room you see; ");
   for(int n = 0; n < inv->itemNum; n++){
     if(n == inv->itemNum-1){
-      printf(" and ");
+      printf(" and");
+      printObj(inv->items[n]);
+    }else if(n != 0){
+      printf(", ");
       printObj(inv->items[n]);
     }else{
-      printf(", ");
       printObj(inv->items[n]);
     }
   }
+  printf("\n");
 } 
