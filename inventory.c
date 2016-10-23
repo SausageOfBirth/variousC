@@ -34,9 +34,9 @@ void printInventory(Invent* inv){
   	printf("Dude! You're like, totally out of stuff, gnarly!\n");
   	return;
   }
-  char *border = malloc(108);
-  memset(border, '_',107);
-  border[107] = 0;
+  char *border = malloc(83);
+  memset(border, '_',82);
+  border[82] = 0;
 
   char* upperBorder = concat(".",concat(border,"."));
 
@@ -44,7 +44,7 @@ void printInventory(Invent* inv){
 
   printf("%s\n", upperBorder);
   for(int n = 0; n < inv->itemNum; n++){
-  	int fillerSize = 100 - lenstr(inv->items[n]->item,maxLen);
+  	int fillerSize = 75 - lenstr(inv->items[n]->item,maxLen);
   	char *filler = malloc(fillerSize+1);
   	memset(filler, '.',fillerSize);
   	filler[fillerSize] = 0;
