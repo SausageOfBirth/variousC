@@ -30,5 +30,11 @@ int main(){
   printInventory(myInventory);
   removeItem(&myInventory, 0, 3);
   printInventory(myInventory);
+  char* test1 = "apple";
+  char* test2 = "queer apple pear";
+  char* test3 = "test";
+  char* test4 = "test";
+  printf("%d\n", in_str(test2, test1));
+  printf("%s\n", test3 == test4 ? "true" : "false");
   return 0;
 }
